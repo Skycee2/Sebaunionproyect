@@ -1,0 +1,18 @@
+<ion-item lines="none">
+   <ion-thumbnail slot="start">
+      <img [src]="riders?.foto ? riders.foto :'assets/imgs/moto1.jpg' ">
+   </ion-thumbnail>
+   <ion-label>
+      <h4 >{{riders?.name}}</h4>
+      <ion-text color="tertiary">
+        <p class="pStyle2">
+         Sector: {{riders?.sector}}
+        </p>
+        <p class="pStyle2">
+         Disponibilidad: 
+         {{riders?.disponibilidad}}
+        </p>
+      </ion-text>
+      <!-- <input type="hidden" ng-model="record.usersId" value="{{riders.uid}}"/> -->
+   </ion-label>
+  </ion-item>

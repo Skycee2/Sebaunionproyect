@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="btnMenu">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Solicitar Orden</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <form [formGroup]="solicitudForm" (ngSubmit)="solicitarOrden()">
+      <ion-item>
+        <ion-label position="floating">¿Quién solicita el servicio?</ion-label>
+        <ion-input formControlName="creado_por" type="text" placeholder="Ingrese nombre del solicitante"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Tipo de Envío</ion-label>
+        <ion-select formControlName="tipo_envio" interface="action-sheet" placeholder="Seleccione Tipo de Envío">
+          <ion-select-option value="Documento">Documento</ion-select-option>
+          <ion-select-option value="Encomienda">Encomienda</ion-select-option>
+          <ion-select-option value="Otro">Otro</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Dirección de Origen</ion-label>
+        <ion-input formControlName="direccion_origen" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Comuna de Origen</ion-label>
+        <ion-select formControlName="comuna_orig" interface="action-sheet" placeholder="Seleccione comuna">
+          <ion-select-option value="Santiago Centro">Santiago Centro</ion-select-option>
+          <ion-select-option value="Las Condes">Las Condes</ion-select-option>
+          <ion-select-option value="Vitacura">Vitacura</ion-select-option>
+          <ion-select-option value="San Miguel">San Miguel</ion-select-option>
+          <ion-select-option value="La Reina">La Reina</ion-select-option>
+          <ion-select-option value="Puente Alto">Puente Alto</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Dirección de Entrega</ion-label>
+        <ion-input formControlName="direccion_entrega" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Comuna de Entrega</ion-label>
+        <ion-select formControlName="comuna_entr" interface="action-sheet" placeholder="Seleccione comuna">
+          <ion-select-option value="Santiago Centro">Santiago Centro</ion-select-option>
+          <ion-select-option value="Las Condes">Las Condes</ion-select-option>
+          <ion-select-option value="Vitacura">Vitacura</ion-select-option>
+          <ion-select-option value="San Miguel">San Miguel</ion-select-option>
+          <ion-select-option value="La Reina">La Reina</ion-select-option>
+          <ion-select-option value="Puente Alto">Puente Alto</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">¿Quién recibe?</ion-label>
+        <ion-input formControlName="nombre_contacto" type="text" placeholder="Ingrese nombre de contacto"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Teléfono de Contacto</ion-label>
+        <ion-input formControlName="telefono_contacto" type="number" placeholder="Ingrese teléfono de contacto"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Instrucciones de Entrega</ion-label>
+        <ion-input formControlName="instrucciones_entrega" type="text" placeholder="Ingrese instrucciones (máx. 200 caracteres)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Hora Estimada de Entrega</ion-label>
+        <ion-input formControlName="hora_estimada_entrega" type="text"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" type="submit">Crear Orden</ion-button>
+    </form>
+  </div>
+</ion-content>

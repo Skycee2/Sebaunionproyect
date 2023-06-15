@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar mode="md">
+    <ion-title color="dark">
+      <span>Home</span>
+    </ion-title>
+    <ion-icon color="dark" name="chevron-down-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="isLoading"><ion-skeleton-text animated style="height: 25vh;"></ion-skeleton-text></div>
+  <app-loading-encurso *ngIf="isLoading"></app-loading-encurso>
+
+  <app-banner *ngIf="!isLoading" [bannerImages]="ordenEnCurso"></app-banner>
+  
+  <ion-list *ngIf="!isLoading" >
+
+    <ion-label>
+      <ion-button [routerLink]= "['/','admin-ordenes']">VER TODAS LAS ORDENES</ion-button>
+    </ion-label>
+    <ion-list-header class="ion-margin-botom">
+      <ion-label>
+        <h4>En curso:</h4>
+      <p>Revisa las ordenes en curso</p>
+      </ion-label>
+    </ion-list-header>
+    <ion-item-group  *ngIf="ordenEnCurso.length > 0">
+        <app-encurso *ngFor="let encurso of ordenEnCurso"
+                     [encurso]="encurso"
+                     > ></app-encurso>
+                     <!-- [routerLink]="['/', 'tabs', 'ordenEnCurso', encurso.uid]"></app-encurso> -->
+    </ion-item-group>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="btnMenu">
+    <ion-menu-button auto-hide="false"></ion-menu-button>
+  </ion-buttons>
+  <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo">
+  <div class="contenedor">
+    <img src="../../../assets/imgs/usuario1.png" class="logo" />
+    <h2 class="titulo"> Información del usuario </h2>
+    <ion-list class="list">
+      <ion-item>
+        <ion-label class="label"> RUT: </ion-label>
+        <label class="valor"> {{ usuarioLogueado?.rut }} </label>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label"> NOMBRE: </ion-label>
+        <label class="valor"> {{ usuarioLogueado?.nom_rso }} </label>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label"> DIRECCIÓN: </ion-label>
+        <label class="valor"> {{ usuarioLogueado?.direccion }} </label>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label"> EMAIL: </ion-label>
+        <label class="valor"> {{ usuarioLogueado?.email }} </label>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label"> TELEFONO: </ion-label>
+        <label class="valor"> {{ usuarioLogueado?.telefono }} </label>
+       <!-- <ion-icon (click)="presentAlertPrompt()" slot="end" name="create"></ion-icon> -->
+      </ion-item>
+      <ion-item>
+        <ion-label class="label"> NOMBRE DE USUARIO: </ion-label>
+        <label class="valor"> {{ usuarioLogueado?.nom_usuario }} </label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>admin-ordenes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">admin-ordenes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+<ion-header>
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="dark">
+      <span>Administrar Ordenes</span>
+    </ion-title>
+  </ion-toolbar>   
+</ion-header>
+
+<ion-content>
+  <ion-card-content> 
+    <h1>Lista de órdenes</h1>
+    <div *ngIf="ordenes.length != 0; else elseBlock">
+      <ion-list>
+        <ion-card *ngFor="let orden of ordenes">
+          <ion-item>
+            <ion-card-header>
+              <ion-card-title>{{ orden.nom_rso }}</ion-card-title>
+              <ion-card-subtitle>{{ orden.tipo_envio }} - {{ orden.comuna_orig }} - {{ orden.comuna_entr }}</ion-card-subtitle>
+            </ion-card-header>
+          </ion-item>
+          <ion-card-content>
+            <p><strong>Fecha de entrega:</strong> {{ orden.fecha_entrega }}</p>
+            <p><strong>Hora de entrega:</strong> {{ orden.hora_estimada_entrega }}</p>
+            <p><strong>Dirección de origen:</strong> {{ orden.direccion_origen }}</p>
+            <p><strong>Comuna de entrega:</strong> {{ orden.comuna_entr }}</p>
+            <p><strong>Dirección de entrega:</strong> {{ orden.direccion_entrega }}</p>
+            <p><strong>Comuna de entrega:</strong> {{ orden.comuna_entr }}</p>
+            <p><strong>Nombre de contacto:</strong> {{ orden.nombre_contacto }}</p>
+            <p><strong>Teléfono de contacto:</strong> {{ orden.telefono_contacto }}</p>
+            <p><strong>Instrucciones de entrega:</strong> {{ orden.instrucciones_entrega }}</p>
+            <ion-item>
+              <ion-label>Motociclista asignado:</ion-label>
+      <ion-select [(ngModel)]="motociclistaSeleccionado">
+        <ion-select-option *ngFor="let motociclista of motociclistas" [value]="motociclista.nom_rso">
+          {{ motociclista.nom_rso }}
+        </ion-select-option>
+      </ion-select>
+      <ion-button expand="full" (click)="asignarOrden(orden)">Asignar</ion-button>
+
+            </ion-item>
+            <!-- Agrega aquí otros detalles de la orden que deseas mostrar -->
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
+    </div>
+    <ng-template #elseBlock>
+      <p>No existen órdenes</p>
+    </ng-template>
+  </ion-card-content>
+</ion-content>

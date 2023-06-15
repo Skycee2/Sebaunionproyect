@@ -1,0 +1,53 @@
+@use '../../../global.scss';
+
+.fondo {
+    height: 100vh;
+    background-color: #020a27;
+    background-size: cover;
+    text-align: center;
+}
+
+ion-card {
+    margin: 0 auto;
+    top: 5vh;
+    height: 90vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    .imagen_login {
+        width: 40%;
+    }
+
+        ion-card-title {
+            font-size: x-large;
+            color: whitesmoke;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    
+
+    ion-item {
+        --background: none;
+
+
+        ion-label {
+            font-size: large;
+            font-weight: bolder;
+        }
+    }
+
+    ion-button{
+        margin-top: 20px;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .fondo {
+        ion-card {
+            width: 70vw;
+        }
+    }
+}

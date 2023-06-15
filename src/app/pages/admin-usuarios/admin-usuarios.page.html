@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="dark">
+      <span>Administrar Usuarios</span>
+    </ion-title>
+  </ion-toolbar>   
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchText" (ionChange)="filtroUsuarios()" (ionClear)="limpiarBusqueda()"></ion-searchbar>
+  
+  <table class="user-table">
+    <!-- Encabezado de la tabla -->
+    <thead>
+      <tr>
+        <th>RUT</th>
+        <th>Nombre o Razón Social</th>
+        <th>Email</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th>Nombre de Usuario</th>
+        <th>Tipo de Usuario</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Filas de la tabla -->
+      <tr *ngFor="let usuario of usuariosFiltrados">
+        <td>{{ usuario.rut }}</td>
+        <td>{{ usuario.nom_rso }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.direccion }}</td>
+        <td>{{ usuario.telefono }}</td>
+        <td>{{ usuario.nom_usuario }}</td>
+        <td>{{ usuario.tipo_usuario }}</td>
+          <td>
+    <ion-button (click)="modificarUsuario(usuario)">Modificar</ion-button>
+    <ion-button (click)="eliminarUsuario(usuario)" color="danger">Eliminar</ion-button>
+  </td>
+      </tr>
+    </tbody>
+  </table>
+</ion-content>

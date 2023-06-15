@@ -1,0 +1,30 @@
+ion-buttons {
+    margin-top: 1.5rem;;
+    margin-right: 1rem;
+    padding-right: 1rem;
+    margin-bottom: -3.2rem;
+    padding-bottom: -3.2rem;
+}
+
+h3{
+   text-align: center;
+   margin-bottom: 2rem;
+   font-weight: bold;
+   background: rgb(190, 213, 255);
+   border-radius: 25px;
+   margin-right: 4rem;
+   margin-left: 4rem;
+}
+ion-searchbar.custom{
+    --color: rgb(0, 47, 148);
+    --border-radius: 30px;
+    --icon-color:  rgb(0, 47, 148);
+    --placeholder-font-weight: bold;
+}
+
+.rider-card{
+    background-color: rgba(126, 192, 253, 0.116); ;
+}
+ion-toolbar.barra{
+    margin-top: 2.5rem;
+}

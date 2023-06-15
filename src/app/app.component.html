@@ -1,0 +1,32 @@
+<ion-app>
+  <ion-menu *ngIf="usuarioLogueado" menuId="main-menu" contentId="main">
+    <ion-content>
+      <div class="menu-header-bg"></div>
+      <div class="header-contenido">
+        <img src="../assets/img/motociclista.jfif" alt="">
+        <ion-label *ngIf="usuarioLogueado">
+          <h2>{{ this.usuarioLogueado.nom_rso }}</h2>
+          <p>{{ this.usuarioLogueado.email }}</p>
+        </ion-label>
+      </div>
+      <ion-list class="menu-items" lines="none">
+        <ion-item (click)="btnHome()">
+          <ion-icon name="home-outline"></ion-icon> Home
+        </ion-item>
+        <ion-item (click)="btnUsuarios()">
+          <ion-icon name="people-outline"></ion-icon> Usuarios
+        </ion-item>
+        <ion-item  (click)="btnReportes()">
+          <ion-icon name="document-text-outline"></ion-icon> Reportes
+        </ion-item>
+        <ion-item (click)="btnConfiguracion()">
+          <ion-icon name="settings-outline"></ion-icon> Configuración
+        </ion-item>
+        <ion-item (click)="logout()">
+          <ion-icon name="log-out-outline" ></ion-icon> Cerrar sesión
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

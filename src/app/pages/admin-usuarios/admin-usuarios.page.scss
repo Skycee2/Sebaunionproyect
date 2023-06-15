@@ -1,0 +1,47 @@
+ion-header {
+    --ion-background-color: rgb(4, 78, 175);
+  }
+  
+  ion-toolbar {
+    --color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  btnMenu {
+    color: white;
+  }
+
+  ion-icon {
+    font-size: 1rem;
+}
+ion-title{
+  font-weight: bold;
+  text-align: center;
+  color: aliceblue;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th,
+.user-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+@media screen and (max-width: 767px) {
+  .user-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .user-table th,
+  .user-table td {
+    white-space: nowrap;
+  }
+}

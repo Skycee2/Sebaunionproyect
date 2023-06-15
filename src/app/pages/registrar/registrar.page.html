@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="btnMenu">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Registrar Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+  <ion-content>
+  
+    <form [formGroup]="usuario" (ngSubmit)="registrar()">
+<ion-item>
+  <ion-label position="floating" color="primario">Rut</ion-label>
+  <ion-input type="text" placeholder="1.234.567-8" formControlName="rut"></ion-input>
+</ion-item>
+      <ion-item>
+        <ion-label position="floating">Nombre o razón social</ion-label>
+        <ion-input type="text" placeholder="Ingrese nombre completo" formControlName="nom_rso"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Dirección</ion-label>
+        <ion-input type="text" placeholder="Ingrese dirección" formControlName="direccion"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input type="email" placeholder="Ingrese correo electrónico" formControlName="email" name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Telefono</ion-label>
+        <ion-input type="number" placeholder="Ingrese Telefono" formControlName="telefono"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Tipo de usuario</ion-label>
+        <ion-select aria-label="tipo" interface="action-sheet" placeholder="Seleccione usuario" formControlName="tipo_usuario">
+          <ion-select-option value="cliente">Cliente</ion-select-option>
+          <ion-select-option value="motociclista">Motociclista</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nombre de usuario</ion-label>
+        <ion-input type="text" placeholder="Ingrese Usuario" formControlName="nom_usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" placeholder="Ingrese contraseña" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ingrese contraseña nuevamente</ion-label>
+        <ion-input type="password" placeholder="Ingrese contraseña nuevamente" [(ngModel)]="verificar_password" [ngModelOptions]="{standalone: 'true'}"></ion-input>
+      </ion-item>
+      <ion-button type="submit" [disabled]="!usuario.valid">REGISTRAR</ion-button>  
+    </form>
+      </ion-content>
+<!--
+    <ion-card-content> 
+      <h1>Lista de usuarios</h1>
+      <div *ngIf="usuario.length != 0; else elseBlock">
+        <ion-list *ngFor="let usuario of usuarios">
+          <ion-card>
+            <ion-item>
+              <ion-card-header>
+                <ion-card-title>{{usuario.nom_rso}}</ion-card-title>
+                <ion-card-subtitle>{{usuario.rut}} - {{usuario.email}} - {{usuario.tipo_usuario}} </ion-card-subtitle>
+              </ion-card-header>
+              <ion-button slot="end" color="warning" (click)="buscar(usuario.id)">Buscar</ion-button>
+              <ion-button slot="end"  color="danger" (click)="eliminar(usuario.id)">Eliminar</ion-button>
+            </ion-item>
+            <ion-card-content>
+              {{usuario.tipo_usuario}}
+            </ion-card-content>
+          </ion-card>
+        </ion-list>
+      </div>
+      <ng-template #elseBlock>
+        <p>No existen usuarios</p>
+      </ng-template>
+  
+  
+    </ion-card-content>
+  -->
+
+  

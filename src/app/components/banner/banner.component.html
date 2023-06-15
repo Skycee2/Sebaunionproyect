@@ -1,0 +1,32 @@
+<swiper 
+  *ngIf="bannerImages?.length > 0"
+  class="borderBottom"
+  [config]="config">
+  <ng-template swiperSlide *ngFor=" let image of bannerImages">
+    <h1>NUEVA ORDEN !!!</h1>
+    <ion-item lines="none">
+      <ion-thumbnail slot="start">
+        <img [src]="image?.foto ? image.foto :'assets/imgs/moto1.jpg' ">
+      </ion-thumbnail>
+      <ion-label>
+         <h4 >{{image?.name}}</h4>
+         <ion-text color="tertiary">
+           <p class="pStyle2">
+             Direccion de recogida: 
+           </p>
+          <p class="pStyle">
+            {{image?.dir_recogida}}
+           </p>
+         </ion-text>
+         <p class="pStyle2">
+          Hora de entrega: {{image?.hora}}
+        </p>
+         <ion-text color="tertiary" *ngIf="image?.distance && image?.distance !=0">
+          <p class="distance">
+             Distancia: {{image?.distancia | number: '0.0-2'}}kms
+           </p>
+         </ion-text>
+      </ion-label>
+     </ion-item>
+  </ng-template>
+</swiper>

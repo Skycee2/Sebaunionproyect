@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="btnMenu">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="usuarios-page-content">
+  <div class="fondo">
+  <h2>¿Que deseas realizar?</h2>
+  <ion-grid class="button-grid">
+    <ion-row>
+      <ion-col size="12" class="button-col">
+        <ion-button expand="block" color="warning" shape="round" routerLink="/registrar">
+          Crear usuarios
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="button-col">
+        <ion-button expand="block" color="tertiary" shape="round" routerLink="/admin-usuarios">
+          Historial de usuarios registrados
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div>
+    <img src="../../../assets/imgs/Logo MOTOXPRESS.png" class="logo" />
+  </div>
+</div>
+</ion-content>

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+ion-header {
+  --ion-background-color: rgb(4, 78, 175);
+}
+
+ion-toolbar {
+  --color: white;
+}
+
+.btnMenu {
+  color: white;
+}
+
+ion-title {
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin-right: 10px;
+}
+
+ion-tabs {
+  --background: navy;
+  --color: white;
+}
+
+ion-tab-button {
+  --color: white;
+}
+
+.fondo {
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 20px;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.titulo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: navy;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.list {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.label {
+  font-weight: bold;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.valor {
+  font-size: 18px;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+}

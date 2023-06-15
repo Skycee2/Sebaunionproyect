@@ -1,0 +1,19 @@
+<ion-item>
+  <ion-thumbnail slot="start">
+    <img [src]="orden?.cover ? orden.cover : 'assets/imgs/1.jpg'" />
+  </ion-thumbnail>
+  <ion-label>
+    {{orden?.name_cliente}}
+    <h6>Recogida:</h6>
+    <p class="ion-text-wrap">{{orden?.dir_recogida}}</p>
+    <h6>Entrega:</h6>
+    <p class="ion-text-wrap">{{orden?.dir_entrega}}</p>
+  </ion-label>
+  <ion-row>
+    <ion-button>
+      <ion-text *ngIf="orden?.sin_asignar; else elseBlock" class="button">Asignar</ion-text>
+      <ng-template #elseBlock class="button">Ver Detalles</ng-template>
+    </ion-button>
+  </ion-row>
+</ion-item>
+

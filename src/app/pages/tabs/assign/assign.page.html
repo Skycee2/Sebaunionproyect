@@ -1,0 +1,60 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <!-- <ion-title>items</ion-title> -->
+    <ion-buttons>
+      <ion-back-button defaultHref="/tabs/ordenEnCurso"></ion-back-button>
+    </ion-buttons>
+    <h3>Detalles de Orden</h3>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+   <app-order-details [data]="data" [isLoading]="isLoading"></app-order-details>
+
+   <ion-item *ngIf="data?.sin_asignar ==false; else elseBlock" lines="none" class="ion-padding-horizontal dashedBorderBottom">
+    <ion-thumbnail slot="start" class="rider-card">
+       <img [src]="data.foto ? data.foto :'assets/imgs/moto1.jpg'" class="rider-card">
+    </ion-thumbnail>
+    <ion-label class="rider-card">
+       <h4 class="rider-card">Rider:</h4>
+       <ion-text class="rider-card" >
+         <h6 class="rider-card">
+          {{data.name_rider}}
+         </h6>
+       </ion-text >
+       <h4 class="rider-card">Telefono:</h4>
+       <p class="rider-card">
+        {{data.telefono_rider}}
+       </p>
+    </ion-label>
+   </ion-item>
+  <ng-template #elseBlock>
+    <ion-toolbar class="barra">
+      <ion-searchbar
+        class="custom "
+        animated="true"
+        debounce="800"
+        placeholder="Selecciona rider a asignar"
+        #searchInput
+        (ionChange)="onSearchChange($event)"></ion-searchbar>
+    </ion-toolbar>
+    <app-loading-encurso *ngIf="isLoading"></app-loading-encurso>
+    <app-empty-screen *ngIf="(findriders?.length == 0 || query?.length == 0)" [model]="model"></app-empty-screen>
+    
+    <ion-list *ngIf="!isLoading && findriders.length > 0">
+      <ion-list-header>
+        <ion-label>
+          <h4>Resultado de la busqueda"{{query}}"</h4>
+        </ion-label>
+      </ion-list-header>
+      <app-riders *ngFor="let riders of findriders"
+      [riders]="riders"
+      >
+    </app-riders>
+    <!-- <p>{{data2?.uid}}</p> -->
+    </ion-list>
+  </ng-template>
+</ion-content>
+
+
+
+

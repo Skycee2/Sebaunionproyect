@@ -1,0 +1,26 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <div class="fondo">
+    <form [formGroup]="usuario" (ngSubmit)="login()">
+      <ion-card class="ion-padding ion-text-center" color="primary">
+        <img src="../../../assets/imgs/usuario2.png" alt="imagen_login" class="imagen_login" />
+        <ion-card-header>
+          <ion-card-title>Inicio Sesión</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input type="email" placeholder="Ingrese email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Contraseña</ion-label>
+            <ion-input type="password" placeholder="Ingrese contraseña" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-button type="submit" color="dark">INGRESAR</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </form>
+  </div>
+</ion-content>

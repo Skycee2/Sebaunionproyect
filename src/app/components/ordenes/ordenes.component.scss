@@ -1,0 +1,36 @@
+ion-thumbnail {
+    height: 10vh;
+    width: 20vw;
+    img {
+        border-radius: 5px;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+ion-row {
+    padding-left: 0.6rem;
+    padding-right: -0.6rem;
+}
+
+.quantity {
+    width: 2rem;
+}
+
+ion-text {
+    font-size: 0.8rem;
+}
+
+ion-label {
+    font-size: 0.95rem !important;
+    p {
+        font-size: 0.68rem !important;
+        color: blue;
+    }
+    h6{
+        font-size: 0.79rem !important;
+        color:darkred;
+        font-weight: bold;
+        
+    }
+}

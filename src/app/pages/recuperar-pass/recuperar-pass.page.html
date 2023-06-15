@@ -1,0 +1,24 @@
+<ion-content>
+  <div class="fondo">
+    <ion-card>
+      <img src="../../../assets/img/fpassword.png" alt="imagen_login" class="imagen_login"/>
+      <ion-card-header>
+        <ion-sub-title class="subtitulo"> ¿Has olvidado tu contraseña? </ion-sub-title>
+        <ion-card-title class="titulo">Recuperar contraseña</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+
+        <ion-item>
+          <ion-label>Correo:</ion-label>
+          <ion-input type="text" expand="block" text-align="center" placeholder="Ingrese correo" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-button size="small" expand="block" shape="round" text-align="center" (click)="recuperarContra()">Enviar correo de recuperación </ion-button>
+        <ion-button size="small" expand="block" shape="round" text-align="center" (click)="btnInicio();">Inicio</ion-button>
+
+        <ion-card-footer>
+          <img src="../../../assets/img/Logo MOTOXPRESS.png" alt="imagen_footer" class="imagen_footer"/>
+        </ion-card-footer>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

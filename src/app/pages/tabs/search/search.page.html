@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-buttons slot="start" class="btnMenu">
+    <ion-menu-button auto-hide="false"></ion-menu-button>
+  </ion-buttons>
+    <ion-searchbar
+      animated="true"
+      debounce="800"
+      #searchInput
+      (ionChange)="onSearchChange($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <app-loading-encurso *ngIf="isLoading"></app-loading-encurso>
+  <app-empty-screen *ngIf="!isLoading && (findriders?.length == 0 || query?.length == 0)" [model]="model"></app-empty-screen>
+
+  <ion-list *ngIf="!isLoading && findriders.length > 0">
+    <ion-list-header>
+      <ion-label>
+        <h4>Resultado de la busqueda"{{query}}"</h4>
+      </ion-label>
+    </ion-list-header>
+    <app-riders *ngFor="let riders of findriders"
+    [riders]="riders"
+    [routerLink]="['/', 'tabs', 'rider', riders.uid]"></app-riders>
+  </ion-list>
+</ion-content>

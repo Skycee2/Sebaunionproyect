@@ -1,0 +1,24 @@
+<ion-item lines="none">
+  <ion-thumbnail slot="start">
+     <img [src]="encurso?.foto ? encurso.foto :'assets/imgs/moto1.jpg' ">
+  </ion-thumbnail>
+  <ion-label>
+     <h4 >{{encurso?.name_rider}}</h4>
+     <ion-text color="tertiary">
+       <p class="pStyle2">
+         Direccion de entrega: 
+       </p>
+      <p class="pStyle">
+        {{getDireccion(encurso?.dir_recogida)}}
+       </p>
+     </ion-text>
+     <p class="pStyle2">
+      Hora de entrega: {{encurso?.hora}}
+    </p>
+     <ion-text color="tertiary" *ngIf="encurso?.distance && encurso?.distance !=0">
+      <p class="distance">
+         Distancia: {{encurso?.distancia | number: '0.0-2'}}kms
+       </p>
+     </ion-text>
+  </ion-label>
+ </ion-item>

@@ -1,0 +1,28 @@
+ion-label, h4{
+    font-weight: bold !important;
+    font-size: 0.9rem;
+
+}
+
+ion-header {
+    --ion-background-color: rgb(4, 78, 175);
+  }
+  
+  ion-toolbar {
+    --color: white;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.btnMenu {
+    color: white;
+  }
+
+  ion-searchbar {
+    color: white;
+  }
+
+  ion-content {
+    background-color: rgb(255, 255, 255);
+  }
